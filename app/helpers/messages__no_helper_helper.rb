@@ -1,0 +1,2 @@
+module MessagesNoHelperHelper
+end
