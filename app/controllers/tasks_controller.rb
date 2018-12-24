@@ -17,7 +17,7 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     
     if @task.save
-      flash[:succes] = 'Task が正常に作成されました'
+      flash[:success] = 'Task が正常に作成されました'
       redirect_to @task
     else
       flash.now[:danger] = 'Task は作成されませんでした'
@@ -33,7 +33,7 @@ class TasksController < ApplicationController
     set_task
     
     if @task.update(task_params)
-      flash[:succes] ='Task が正常に更新されました'
+      flash[:success] ='Task が正常に更新されました'
       redirect_to @task
     else
       flash.now[:danger] = 'Task は更新されませんでした'
@@ -45,7 +45,7 @@ class TasksController < ApplicationController
     set_task
     @task.destroy
     
-    flash[:succes] = 'Task が正常に削除されました'
+    flash[:success] = 'Task が正常に削除されました'
     redirect_to tasks_url
   end
   
