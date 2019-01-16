@@ -5,6 +5,10 @@ class UsersController < ApplicationController
   end
 
   def show
+    if logged_in?
+      @task = current_user.tasks.build #form_for用
+      @tasks = current_user.tasks.order('created_at DESC').page(params[:page])
+    end
   end
 
   def new
